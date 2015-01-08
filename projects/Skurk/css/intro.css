@@ -1,0 +1,25 @@
+
+#intro {
+	height: 300px;
+	width: 600px;
+	margin: 150px auto;
+	text-align: center;
+}
+
+#startButton {
+	margin-top: 30px;
+}
+
+#introHeader {
+	font-size: 96px;
+}
+
+#introText {
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+#introImage {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}

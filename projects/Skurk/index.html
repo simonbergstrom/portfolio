@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title> Skurk</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.min.css">
+
+		<!-- Bootstrap Switch CSS -->
+		<link rel="stylesheet" href="libraries/bootstrap/css/bootstrap-switch.min.css">
+
+		<!-- Skurk CSS -->
+		<link rel="stylesheet" href="css/intro.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/parallel_coords.css">
+		<link rel="stylesheet" href="css/stream_graph.css">
+		<link rel="stylesheet" href="css/map.css">
+
+		<!-- JQuery JS -->
+		<script src="libraries/jquery-2.1.0.min.js"></script>
+
+		<!-- Bootstrap JS -->
+		<script src="libraries/bootstrap/js/bootstrap.min.js"></script>
+
+		<!-- Bootstrap Switch JS -->
+		<script src="libraries/bootstrap/js/bootstrap-switch.min.js"></script>
+
+		<!-- D3 JS -->
+		<script src="libraries/d3.v3/d3.v3.min.js"></script>
+
+		<!-- TopoJSON JS -->
+		<script src="libraries/topojson.v1.min.js"></script>
+
+		<!-- Skurk JS -->
+		<script src="js/intro.js"></script>
+
+	</head>
+
+	<body>
+
+		<!-- Wrap all page content here -->
+		<div id="wrap">
+
+			<!-- Intro content -->
+			<div id="intro">
+
+				<h1 id="introHeader">Skurk</h1>
+
+				<h6 id="introText">Brottsvisualisering för 2013.</h6>
+
+				<img id="introImage" src="images/drul.png" alt="Smiley face" width="100" height="40">
+
+				<p>Det här är ett projekt skapat i kursen TNM048 Informationsvisualisering av
+					John Hollén, Simon Bergström och Oscar Ivarsson. Applikationen visar
+					kriminalitet i Sverige och dess kommuner under år 2013. All data som
+					använts till projektet är tagen ifrån Brottsförebyggande rådet (Brå).
+					All den data som presenteras är även angett i brott per 100 000 invånare. Detta för att enklare kolla på samband som ej är beroende av befolkningsstorlek i de olika kommunerna.</p>
+
+				<button type="button" id="startButton" class="btn btn-default btn-lg">
+					Start <span class="glyphicon glyphicon-circle-arrow-right"></span>
+				</button>
+
+			</div>
+
+			<!-- Visualization content -->
+			<div id="main">
+			
+				<!-- Fixed navbar -->
+	            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+					<div class="container">
+						<div class="navbar-header">
+							<a style="margin-bottom: 3px; margin-top: -5px;" class="navbar-brand" href="" style="color:#E9E8E3">Skurk</a><div style="color: #FFF; font-size: 12px;"> Brottsvisualisering 2013</div>
+						</div>
+
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a id="aboutLink" href="#">About</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- Content container -->
+				<div class="container-non-responsive">
+
+					<div class="row">
+
+						<div class="col-md-8">
+
+							<div class="row">
+
+								<div id="viewTopLeft" class="col-md-12">
+
+									<div id="streamGraph">
+
+										<div class="form-inline">
+											<div class="form-group" >
+											    <label for="exampleInputEmail1" style="font-weight:normal;"> Kommun: </label>
+											    <input  class="form-control input-sm" id="searchBox" placeholder="Hela landet" autocomplete="off">
+											    <div id="searchResults">
+
+												</div>
+											</div>
+											<button type="button" id="searchbtn" class="btn btn-sm btn-default">Visa</button>
+											<div id = "errorMessage">
+
+											</div>
+										</div>
+										
+									</div>
+								</div>
+
+
+
+
+							</div>
+
+							<div class="row">
+
+								<div id="viewBottomLeft" class="col-md-12">
+
+									<div id="parallelCoords">
+										<div class="btn-group" style = "margin: 10px; margin-bottom: 0px; display: inline-block; float: left;">
+										<p style="float:left;margin-right:5px;padding-top: 5px; padding-left: 30px;"> Månad: </p>
+										  <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+										   <p id = "chooseData" style="float:left;margin:0;margin-left4px;margin-right:4px;">helår</p> <span class="caret"></span>
+										  </button>
+										  <ul class="dropdown-menu" style="max-height: 200px; overflow:scroll;" role="menu">
+										  	<li><a class = "category">helår</a></li>
+										    <li><a class = "category">januari</a></li>
+										    <li><a class = "category">februari</a></li>
+										    <li><a class = "category">mars</a></li>
+										    <li><a class = "category">april</a></li>
+										    <li><a class = "category">maj</a></li>
+										    <li><a class = "category">juni</a></li>
+										    <li><a class = "category">juli</a></li>
+										    <li><a class = "category">augusti</a></li>
+										    <li><a class = "category">september</a></li>
+										    <li><a class = "category">oktober</a></li>
+										    <li><a class = "category">november</a></li>
+										    <li><a class = "category">december</a></li>								    
+										  </ul>									
+										</div>
+										<div class="btn-group" style = "margin: 10px; margin-bottom: 0px; display: inline-block; float: left;">
+										<p style="float:left;margin-right:5px;padding-top: 5px; padding-left: 10px;"> Antal kluster: </p>
+										  <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+										   <p id = "chooseClusters" style="float:left;margin:0;margin-left4px;margin-right:4px;"> 3</p> <span class="caret"></span>
+										  </button>
+										  <ul class="dropdown-menu" style="float:left;max-height: 220px; " role="menu">
+										  	<li><a class = "clusters">1</a></li>
+										    <li><a class = "clusters">2</a></li>
+										    <li><a class = "clusters">3</a></li>
+										    <li><a class = "clusters">4</a></li>
+										    <li><a class = "clusters">5</a></li>
+										    <li><a class = "clusters">6</a></li>
+										    <li><a class = "clusters">7</a></li>
+										    <li><a class = "clusters">8</a></li>						    
+										  </ul>									
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div id="viewRight" class="col-md-4">
+
+							<div id="map">
+								<div class="btn-group" style = "margin-top: 5px; margin-left: 5px; display: inline-block; float: left; width: 400px; z-index: 2; position: absolute;">
+									<p style="float:left;margin-right:5px;padding-top: 5px; padding-left: 3px;"> Brottskategori: </p>
+									<button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+										<p id = "chooseCategory" style="float:left;margin:0;margin-left4px;margin-right:4px;"> Totalt antal brott</p> <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a class = "crimeCategory">Totalt antal brott</a></li>
+										<li><a class = "crimeCategory">Våldsbrott</a></li>
+										<li><a class = "crimeCategory">Hot- kränknings- och frihetsbrott</a></li>
+										<li><a class = "crimeCategory">Vårdslöshet- och vållandebrott</a></li>
+										<li><a class = "crimeCategory">Stöldbrott</a></li>
+										<li><a class = "crimeCategory">Bilbrott</a></li>
+										<li><a class = "crimeCategory">Skadegörelsebrott</a></li>
+										<li><a class = "crimeCategory">Vissa trafikbrott</a></li>
+										<li><a class = "crimeCategory">Alkohol- och narkotikabrott</a></li>
+										<li><a class = "crimeCategory">Vapenbrott</a></li>							    
+									</ul><br>						
+								</div>
+								<div class="btn-group" style = "margin-top: 40px; margin-left: 5px; display: inline-block; float: left; z-index: 1; position: absolute;">
+									<p style="float:left;margin-right:5px;padding-top: 3px; padding-left: 3px;">Klustrering: </p>
+								</div>
+								<div class="btn-group" style = "margin-top: 70px; margin-left: 5px; display: inline-block; float: left; z-index: 1; position: absolute;">
+									<p style="float:left;margin-right:5px;padding-top: 3px; padding-left: 3px;">Kategori </p>
+									<input id="clusterbtn" type="radio" name="radio" checked data-size="small">
+								</div>
+								<div class="btn-group" style = "margin-top: 100px; margin-left: 5px; display: inline-block; float: left; z-index: 1; position: absolute;">
+									<p style="float:left;margin-right:5px;padding-top: 3px; padding-left: 3px;">Månad </p>
+									<input id="clusterbtn_stream" type="radio" name="radio" checked data-size="small">
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<script src="js/map.js"></script>
+		<script src="js/parallel_coords.js"></script>
+        <script src="js/stream_graph.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/clustering.js"></script>
+
+	</body>
+
+</html>

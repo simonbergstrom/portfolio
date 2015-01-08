@@ -1,0 +1,27 @@
+<html>
+
+<script src="../libs/jquery-1.11.1.min.js"></script>
+<script src="../libs/FSO/fso.js"></script>
+<script src="Cards.js"></script>
+<script src="GameState.js"></script>
+<script src="evalPokerHand.js"></script>
+<script src="SimpleGameState.js"></script>
+<script src="SearchTree.js"></script>
+<script src="AI.js"></script>
+<script src="evalPokerHand.js"></script>
+<script src="EHS.js"></script>
+<script src="test.js"></script>
+
+<script type="text/javascript">
+
+var fso = new FSO(1024 * 1024 * 1, true); // One mb of storage
+
+var fsq = fso.createQueue();
+
+fsq = fso.createQueue();
+fsq.read('montecarloVSrandom.txt', function(data) { console.log(data); });
+fsq.execute();
+
+</script>
+
+</html>

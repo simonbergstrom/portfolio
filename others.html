@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
@@ -58,10 +57,10 @@
 			<nav id="navigation">
 				
 				<ul>
-					<li class="selected"> <a href ="#">Hem </a> </li>
+					<li> <a href ="#">Hem </a> </li>
 					<li> <a href ="projects.html">Projekt </a> </li>
 					<li> <a href ="reports/CV/Simon_Bergstrom_CV.pdf">CV </a> </li>
-					<li> <a href='others.html'> Övrigt </a></li> 
+					<li class="selected"> <a href='others.html'> Övrigt </a></li> 
 					<li> <a href ="contact.php">Kontakt </a> </li>
 
 				</ul>
@@ -76,10 +75,10 @@
 			</div>
 			<div id='box'>
 				<ul>
-					<li class="selected"> <a href='#'> Hem </a></li> 
+					<li> <a href='index.html'> Hem </a></li> 
 					<li> <a href='projects.html'> Projekt </a></li> 
 					<li> <a href ="reports/CV/Simon_Bergstrom_CV.pdf">CV </a> </li>
-					<li> <a href='others.html'> Övrigt </a></li> 
+					<li class="selected"> <a href='others.html'> Övrigt </a></li> 
 					<li> <a href='contact.php'> Kontakt </a></li> 
 				</ul>
 			</div>
@@ -87,50 +86,46 @@
 			
 		</div>
 
+		<div class="two-thirds column alpha headings">
+			<h2> Övrigt </h2>	
 
+			<p> Här kommer lite övriga rapport,länkar och möjliga filer som är relaterade till mig: </p>
+			
+			<h4>Rapporter</h4>
+			<ul> 
+				<li>Informationsvisualisering  <a class="reportlink" href="reports/infoviz/Infovizreport_simbe109.pdf">Skurk.pdf</a></li>
+				<li>Modellering och Simulering   <a class="reportlink" href="reports/Sumoke/Sumoke.pdf">Sumoke.pdf</a></li>
+				<li>Datamodeller för kognitiva processer   <a class="reportlink" href="reports/Tetrismaster/reportTNM066.pdf">Tetrismaster.pdf</a></li>
+				<li>Artificiell Intelligent för interaktiv media <a class="reportlink" href="reports/Aipoker/AiPoker.pdf">AiPoker.pdf</a></li>
+			</ul>
 
-		<div class="two-thirds column">
-			<h2> Välkommen! </h2>	
-
-			<p> Mitt namn är Simon, en skön grabb från Östergötland som för tillfället studerar till civilingenjör inom Medieteknik på Linköpings Universitet. Har intresse för programmering och har genom min utbildning utfört olika projekt inom bildbehandling,visualisering,datorgrafik samt diverse mindre programmeringsprojekt ni kan hitta under fliken Projekt.</p>
-			<p> Utanför studierna idrottar jag gärna i form av Bandy i Finspångs AIK eller lyfter skrot på gymmet.</p>
-
-
-			<img src="images/linkedin.jpg" alt="ContactImg" width="250" style="border-radius:20px"/> 
+			<h4>Länkar</h4>
+			<ul> 
+				<li>Folkbladet om skadan efter kvalet till allsvenskan <a class="reportlink" href="http://www.folkbladet.se/nyheter/tre-minuter-kvar-av-sasongen-da-fick-han-nasan-knackt-6786744.aspx">Länk</a></li>
+				<li>Vinst i Hack Out for Summer <a class="reportlink" href="http://hackoutforsummer.se/">Länk</a></li>
+				<li>NT - Otur igen! <a class="reportlink" href="http://nt.se/sport/dubbel-otur-for-simon-8179800.aspx">Länk</a></li>
+			</ul>
 		</div>
-
-		<!--<div class="one-third column">
-		<p>  </p>	
-
-		</div>-->
-
-
 
 		<div class="one-third column" style="margin-bottom:50px;">
-		<h3> Mitt Twitterflöde </h3>	
-	<a class="twitter-timeline" href="https://twitter.com/simbe109" data-widget-id="431541617766318080">Tweets by @simbe109</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		<h5 style="margin-bottom:10px">Vinnare av Hack out for summer!</h5>
+				<img src="images/bestTech.jpg" alt="ContactImg" width="300" style="margin-bottom: 10px"/> 
 
+				<p>Jag och mina tre klasskollegor Simon Jare,Pär Eriksson och John Hollén ställde upp i Hackatonet Hack out for summer anordnat av Spotify samt föreningen LitheHack. Vi vann inom kategorin Best Tech med applikationen "Sound4Cast" som skapades under 8 timmars hackande.</p>
 		</div>
-
-	
 
 	</header>
 		
-
 		<script type = "text/javascript">
 
 			$(document).ready(function()
 			{
-
 				var container = $("#box");
 				container.hide();
 
 				$("button").click( function(){
 					//var container = $("#box");
-
 					container.toggle();
-
 				});
 			});
 

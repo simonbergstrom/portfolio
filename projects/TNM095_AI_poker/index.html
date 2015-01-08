@@ -1,0 +1,73 @@
+<html>
+<head>
+	<title>AiPoker</title>
+	<link rel="stylesheet" href="css/loading.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<!-- Loading bar -->
+	<div id="loading" style="background-color:#333;z-index:10000;height:100%;opacity:0.8;position:absolute;top:0;left:0;width:100%;display:none;">
+		<div class="facebook">
+				<div></div>
+				<div></div>
+				<div></div>
+		</div>
+	</div>
+  <div id="topBar">
+    <div id="topBarContent">
+      <a href="./"><h1>AiPoker</h1></a>
+    </div>
+  </div>
+  <div id="container">
+		<div class="sideMenu">
+			<div class="sideMenuHeader">
+				<h3> Controls </h3>
+			</div>
+			<div class="sideMenuBody">
+				<button id="startButton" style="margin-bottom: 40px;">Start</button>
+				<button id="callButton">Call</button>
+				<button id="betButton">Bet</button>
+				<button id="checkButton">Check</button>
+				<button id="raiseButton">Raise</button>
+				<button id="foldButton">Fold</button>
+			</div>
+		</div>
+	<div id="canvasContainer"></div>
+	<div class="sideMenu" style="height:170px;">
+		<div class="sideMenuHeader" style="background-color:#dff0d8;color:#3c763d;">
+			<h3> Score (Gold) </h3>
+		</div>
+		<div class="sideMenuBody" id="scorePanel" style="font-size:10pt;">
+			<table cellspacing="0" style="width: 100%;font-weight:bold;">
+				<tr><td>Player:</td><td id="playerScore"></td></tr>
+				<tr><td>Computer:</td><td id="computerScore"></td></tr>
+				<tr><td>On Table:</td><td id="tableScore"></td></tr>
+			</table>
+		</div>
+	</div>
+	<div class="sideMenu" style="margin-top:10px;height:318px;overflow-y:auto;">
+		<div class="sideMenuHeader" style="color:#a94442;background-color:#ebccd1;">
+			<h3> Enemy Log </h3>
+		</div>
+		<div class="sideMenuBody" id="enemyLog" style="font-size:10pt;margin:1px;">
+
+		</div>
+	</div>
+	<script src="libs/jquery-1.11.1.min.js"></script>
+    <script src="libs/three.js"></script>
+		<!-- script src="libs/cellshading.js"></script -->
+    <script src="libs/OBJLoader.js"></script>
+    <script src="js/evalPokerHand.js"></script>
+    <script src="libs/OrbitControls.js"></script>
+    <script src="js/Cards.js"></script>
+    <script src="js/SearchTree.js"></script>
+    <script src="js/AI.js"></script>
+    <script src="js/SimpleGameState.js"></script>
+		<script src="js/GameState.js"></script>
+    <script src="js/main.js"></script>
+
+
+  </div>
+
+</body>
+</html>

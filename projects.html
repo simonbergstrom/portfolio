@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Simon Bergström</title>
+	<meta name="description" content="portfolio">
+	<meta name="author" content="Simon Bergström">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+	<link rel="stylesheet" href="vendor/lightbox/css/lightbox.css">
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-touch-icon-114x114.png">
+
+	<script src = "http://code.jquery.com/jquery-latest.min.js"></script>
+	<!--<script src = "vendor/Colorbox/jquery.colorbox.js"></script> -->
+	<script src="vendor/lightbox/js/lightbox-2.6.min.js"></script>
+
+	<script type = "text/javascript">
+		$(document).ready(function()
+		{
+			// For the menu buttons
+			var container = $("#box");
+			container.hide();
+			$("button").click( function(){
+				container.toggle();
+			});
+
+			//Göm alla projektinfo när sidan laddas
+			$(".projectbox").hide();
+
+			// Click event on projects
+			$(".projectlink").click( function(evt){ 
+				var id = $(this)["0"]["innerText"];
+				
+				id = id.replace(/(\r\n|\n|\r)/gm,"").trim(); 
+				$("div[id ^='" + id + "']").slideToggle();
+			});
+		});
+	</script>
+
+</head>
+<body>
+    <!-- Projektsidan -->
+	<div class="container">
+	<header>
+		 <div class="sixteen columns">
+			<h1 class="remove-bottom" style="margin-top: 40px">Simon Bergström</h1>
+			<h5 style = "display: inline;">Min portfolio</h5>
+
+			<nav id="navigation">
+				<ul>
+					<li> <a href ="index.html">Hem </a> </li>
+					<li class="selected"> <a href ="#">Projekt </a> </li>
+					<li> <a href ="reports/CV/Simon_Bergstrom_CV.pdf">CV </a> </li>
+					<li> <a href='others.html'> Övrigt </a></li> 
+					<li> <a href ="contact.php">Kontakt </a> </li>
+				</ul>
+			</nav>
+			<hr />
+
+			<div id="mobile-menu">
+			<!-- MOBIL MENYN -->
+			<button class="burger"></button>
+
+			</div>
+			<div id='box'>
+				<ul>
+					<li> <a href='index.html'> Hem </a></li> 
+					<li class="selected"> <a href='#'> Projekt </a></li> 
+					<li> <a href ="reports/CV/Simon_Bergstrom_CV.pdf">CV </a> </li>
+					<li> <a href='others.html'> Övrigt </a></li> 
+					<li> <a href='contact.php'> Kontakt </a></li> 
+				</ul>
+			</div>			
+		</div>
+	</header>
+
+	<div class="two-thirds column" style="margin-bottom: 50px;">
+		<!--  ****ALL PROJECTS**** -->
+		<div id="projects">
+			<h2> Mina projekt </h2>
+			<p> Här är en samling av projekt jag utfört hitills under min utbildning sorterade efter år, klicka på bilderna för att visa mer information om varje projekt. </p>	
+
+			<h3>2014</h3>
+			<ul>
+				<hr />
+				<!--  AI POKER AGENT -->
+				<li><a class="projectlink AiPoker">
+					<h5>AiPoker</h5><img src="images/projects/AiPoker/aip2.jpg" alt="AIPOKER" width="180" height="135"/> 
+					</a> <br>
+					<p>Poker-agent skapades styrd av ett Monte Carlo Tree Search i combination med några enklare algoritmer skapades för att spela 1 mot 1 Texas Hold'em limited poker</p> 
+				
+				</li>
+
+
+				<div id="AiPoker" class ="projectbox">	
+				<br/>	
+				<p> Pokerspelet Texas Hold'em limited skapades i webben för att senare kunna skapa en poker-agent som skulle vinna så mycket som möjligt och spelet begränsades till endast två spelare för att begränsa sökträdets storlek i poker-agentens logik. Utöver att simulera spelets olika utgångar med Monte Carlo sökträd så implementerades även algoritmerna för poker Hand Strength,Hand Potential samt Bucketing algoritmen för att göra poker agentens beslut så bra som möjligt. </p>
+					<br/>	<br/>
+				<p> <strong> Kurs:</strong> TNM095 Artificiell Intelligent för interaktiv media <br/>
+					<strong> Språk:</strong> HTML,WebGL,Three.js,CSS,jQuery
+					<br/>
+					<br/>
+					<a href='projects/TNM095_AI_poker' style="color:blue; text-decoration:underline;"> Prova applikationen här </a> <br/>
+
+					<strong> Bilder: </strong>
+				</p>
+				<ul>
+				<li><a href="images/projects/AiPoker/aip4.jpg" data-lightbox="AiPoker" title="Spelet Texas Hold'em implementerat i webben."><img src="images/projects/AiPoker/aip4.jpg" alt="AiPoker" width="120"/></a> </li>
+				<li><a href="images/projects/AiPoker/aip6.jpg" data-lightbox="AiPoker" title="Mitt i en omgång mellan en mänsklig spelare och AI poker-agenten."><img src="images/projects/AiPoker/aip6.jpg" alt="AiPoker" width="120"/></a> </li>
+					<li><a href="images/projects/AiPoker/aip2.jpg" data-lightbox="AiPoker" title="Knapparna till vänster visa de möjliga dragen som kan utföras i spelet. Menyn till hoger visar score och en log över vad agenten utför för olika drag är i spelet."><img src="images/projects/AiPoker/aip2.jpg" alt="AiPoker" width="120"/></a> </li> 
+					<li><a href="images/projects/AiPoker/aip3.jpg" data-lightbox="AiPoker" title="Poker agenten får 5 sekunder på sig att ta sitt beslut"><img src="images/projects/AiPoker/aip3.jpg" alt="AiPoker" width="120"/></a> </li>
+					<li><a href="images/projects/AiPoker/aip5.jpg" data-lightbox="AiPoker" title="Poker agenten gör ibland inte de mest logiska draget för att försöka bluffa."><img src="images/projects/AiPoker/aip5.jpg" alt="AiPoker" width="120"/></a> </li>
+					<li><a href="images/projects/AiPoker/aip1.jpg" data-lightbox="AiPoker" title="En omgång avgjord och resultet visas i enemy loggen."><img src="images/projects/AiPoker/aip1.jpg" alt="AiPoker" width="120"/> </a> </li>
+					<li><a href="images/projects/AiPoker/aip7.jpg" data-lightbox="AiPoker" title=""><img src="images/projects/AiPoker/aip7.jpg" alt="AiPoker" width="120"/></a> </li>
+				</ul>	
+				</div>
+				<!-- END AI POKER -->
+
+			<hr />
+				<!-- WHITEBOARD ONLINE -->
+				<li><a class="projectlink WhiteboardOnline">
+					<h5>WhiteboardOnline</h5><img src="images/projects/whiteboardonline/wo_5.png" alt="WhiteboardOnline" width="180" height="135"/> 
+					</a> <br>
+					<p> Whiteboard i webbläsaren som flera klienter kan skriva på och redigera samtidigt.</p> 
+					
+				</li>
+
+				<div id="WhiteboardOnline" class ="projectbox">	
+
+				<p> WhiteboardOnline erbjuder olika möjligheter att rita i olika färger och storlekar på penseln samt möjlighet att radera. Det finns två autentiseringsmöjligheter genom att skapa ett lokalt konto att logga in med eller logga in med sitt Facebook-konto. </p>
+
+				<p> <strong> Kurs:</strong> TDDD27 Avancerad webbprogrammering <br/>
+					<strong> Språk:</strong> AngularJS,ExpressJS,PassportJS,Mongoose,PaperJS
+					<br/>
+					<br/>
+					<a href='https://www.youtube.com/watch?v=lq961A49RCU' style="color:blue; text-decoration:underline;"> Screencast för WhiteboardOnline</a> <br/>
+
+					<strong> Bilder: </strong>
+				</p>
+				<ul>
+					<li><a href="images/projects/whiteboardonline/wo_1.png" data-lightbox="WhiteboardOnline" title="Startvyn, visar en Stream graph,Parallel plot samt en karta över Sverige."><img src="images/projects/whiteboardonline/wo_1.png" alt="WhiteboardOnline" width="120"/> </a> </li>
+					<li><a href="images/projects/whiteboardonline/wo_2.png" data-lightbox="WhiteboardOnline" title="Varje lager i Stream Graph visar en brottskategori."><img src="images/projects/whiteboardonline/wo_2.png" alt="WhiteboardOnline" width="120"/></a> </li> 
+					<li><a href="images/projects/whiteboardonline/wo_3.png" data-lightbox="WhiteboardOnline" title="Lätt att välja en kommun för att analysera."><img src="images/projects/whiteboardonline/wo_3.png" alt="WhiteboardOnline" width="120"/></a> </li>
+					<li><a href="images/projects/whiteboardonline/wo_4.png" data-lightbox="WhiteboardOnline" title="Data mining är utfört med hjälp av klustreringsalgoritmer."><img src="images/projects/whiteboardonline/wo_4.png" alt="WhiteboardOnline" width="120"/></a> </li>
+					<li><a href="images/projects/whiteboardonline/wo_5.png" data-lightbox="WhiteboardOnline" title="En annan clustreringsalgoritm som kollar valt antal kluster och delar in i kommuner profiler av brott."><img src="images/projects/whiteboardonline/wo_5.png" alt="WhiteboardOnline" width="120"/></a> </li>
+					<li><a href="images/projects/whiteboardonline/wo_6.png" data-lightbox="WhiteboardOnline" title="En annan clustreringsalgoritm som kollar valt antal kluster och delar in i kommuner profiler av brott."><img src="images/projects/whiteboardonline/wo_6.png" alt="WhiteboardOnline" width="120"/></a> </li>
+					<li><a href="images/projects/whiteboardonline/wo_7.png" data-lightbox="WhiteboardOnline" title="En annan clustreringsalgoritm som kollar valt antal kluster och delar in i kommuner profiler av brott."><img src="images/projects/whiteboardonline/wo_7.png" alt="WhiteboardOnline" width="120"/></a> </li>
+					<li><a href="images/projects/whiteboardonline/wo_8.png" data-lightbox="WhiteboardOnline" title="En annan clustreringsalgoritm som kollar valt antal kluster och delar in i kommuner profiler av brott."><img src="images/projects/whiteboardonline/wo_8.png" alt="WhiteboardOnline" width="120"/></a> </li>
+					<li><a href="images/projects/whiteboardonline/wo_9.png" data-lightbox="WhiteboardOnline" title="En annan clustreringsalgoritm som kollar valt antal kluster och delar in i kommuner profiler av brott."><img src="images/projects/whiteboardonline/wo_9.png" alt="WhiteboardOnline" width="120"/></a> </li>
+					<li><a href="images/projects/whiteboardonline/wo_10.png" data-lightbox="WhiteboardOnline" title="En annan clustreringsalgoritm som kollar valt antal kluster och delar in i kommuner profiler av brott."><img src="images/projects/whiteboardonline/wo_10.png" alt="WhiteboardOnline" width="120"/></a> </li>
+				</ul>	
+				</div>
+				<!-- END WHITEBAORDONLINE -->
+
+				<!-- Timestamp -->
+				<li><a class="projectlink Timestamp">
+				<br/> <br/>	
+					<h5>Timestamp</h5><img src="images/projects/timestamp/1.png" alt="mosaic" width="180" height="135"/> 
+					</a> <br>
+					<p> Tidsrapporteringsapp för konsulter på Combitech utvecklad i Android. </p> 
+				</li>
+
+
+				<div id="Timestamp" class ="projectbox">	
+					<p> Projektarbete i grupp av 6-7 personer där syftet var att lära sig utveckla enligt agila utvecklingsmetoder med inriktning på Scrum. Uppdraget var att utveckla en android applikation för tidrapportering direkt i mobilen anpassad för konsulter på företaget Combitech  som bistod med produktägare och scrum coacher till detta projekt.</p>
+
+					 <p> <strong>Språk:</strong> Android SDK <br/>
+					 	<strong> Kurs:</strong> TNM082 Agil användbarhetsutveckling för handhållna enheter <br/>
+					 	<br/>
+					 	<br/>
+					 
+						<strong>Bilder:</strong> 
+					 </p> 
+					<ul>
+						<li><a href="images/projects/timestamp/1.png" data-lightbox="timestamp" title="Efter att ha regisrerat minst ett projekt att rapportera tid på så kommer man till denna startsida där man kan få överblick över sin rapporterade tid samt starta en ny tidtagning."><img src="images/projects/timestamp/1.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/2.png" data-lightbox="timestamp" title="Det finns flera olika visualiseringar av den rapporterade tid man kan se, här har vi översikt över de senaste 6 månaderna medans föregående bild visade en överblick över den aktuella veckans tidsrapportering."><img src="images/projects/timestamp/2.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/3.png" data-lightbox="timestamp" title="Den tredje och sista vyn för rapporterad tid är några nyckelttal som visar hur mkt tid man rapporterat för ett specifikt projekt."><img src="images/projects/timestamp/3.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/4.png" data-lightbox="timestamp" title="Knappen lyser grönt och en tidtagare startar då man vill påbörja en tidagning.Trycker man på knappen igen så stoppas tidtagaren och tiden lagras för de valda projektet."><img src="images/projects/timestamp/4.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/5.png" data-lightbox="timestamp" title="Aktuella projektet är Heeey men de går enkelt att skapa nya projekt och välja dessa från denna dropdownlista."><img src="images/projects/timestamp/5.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/6.png" data-lightbox="timestamp" title="Nästa vy där man ser all lagrad/rapporterad tid för ett valt projekt och har möjlighet att redigera,ta bort samt manuellt skapa nya tidsinlägg som ska vara med i tidsrapporten."><img src="images/projects/timestamp/6.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/7.png" data-lightbox="timestamp" title="Vyn för att manuellt skapa nytt eller redigera ett tidsinlägg."><img src="images/projects/timestamp/7.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/8.png" data-lightbox="timestamp" title="Vid lönetider el vid behov så kan tidsrapportera exporteras och mejlas till valfri mottagare, standardfilformatet är CSV på tidsrapporten som skickas."><img src="images/projects/timestamp/8.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/9.png" data-lightbox="timestamp" title="Lite inställningar"><img src="images/projects/timestamp/9.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/10.png" data-lightbox="timestamp" title="Vyn för redigera/skapa nya projekt"><img src="images/projects/timestamp/10.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/11.png" data-lightbox="timestamp" title="Information om varje projekt"><img src="images/projects/timestamp/11.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/12.png" data-lightbox="timestamp" title="En widget finns även till appen där man kan starta och stoppa tidtagaren för ett projekt utan att behöva starta appen"><img src="images/projects/timestamp/12.png" alt="timestamp" width="120"/> </a> </li>
+						<li><a href="images/projects/timestamp/13.png" data-lightbox="timestamp" title="Notifikationer går att ställa in för att påminna om när tidsrapport bör exporteras. Även en automatisk notifikation kommer då tidtagaren har rullat mer än 8 timmar i sträck."><img src="images/projects/timestamp/13.png" alt="timestamp" width="120"/> </a> </li>
+					</ul>
+				</div>
+				<!-- END Timestamp -->
+
+				<!-- Mosaic -->
+				<li><a class="projectlink Mosaic">
+				<br/> <br/>	
+					<h5>Mosaic</h5><img src="images/projects/mozaik/moz7.png" alt="mosaic" width="180" height="135"/> 
+					</a> <br>
+					<p> Bildsökningsapplikation i Matlab för att skapa en mosaikbild av kvadratiska bilder. </p> 
+				</li>
+
+
+				<div id="Mosaic" class ="projectbox">	
+					<p> Applikationen använder sig av en databas bestående av mellan 5-10000 bilder. Storlek på mozaikbitar/celler varierar beroende på intensitetsskillnader i bilden för att balansera prestanda av exekvering av applikation och kvalite och den resulterande mosaikbilden.</p>
+
+					 <p> <strong>Språk:</strong> MATLAB <br/>
+					 	<strong> Kurs:</strong>  Bilddatabaser TNM025 <br/>
+					 	<strong>Medarbetare:</strong> Jimmie Berg 
+					 	<br/>
+					 	<br/>
+					 
+
+						<strong>Bilder:</strong> 
+					 </p> 
+					<ul>
+						<li><a href="images/projects/mozaik/moz1.png" data-lightbox="mosaic" title="Visar första steget i processen för att skapa en mosaikbild av en bild på Obama. Detta steg är att dela upp bilden i dynamisk storlek på celler beroende på intensitetsskillnader i bilden med hjälp av en Quad-Tree struktur."><img src="images/projects/mozaik/moz1.png" alt="mosaic" width="120"/> </a> </li>
+						<li><a href="images/projects/mozaik/moz2.png" data-lightbox="mosaic" title="För att hitta rätt bild ur databasen för varje cell skapas feature vectors för varje bild i databasen som jämförs med en skapad feature vector för cellen som ska jämföras."><img src="images/projects/mozaik/moz2.png" alt="mosaic" width="120"/></a> </li> 
+						<li><a href="images/projects//mozaik/moz3.png" data-lightbox="mosaic" title="Feature vektorerna innehåller information om bildens olika färgvärden i RBG och HSV att jämföra med."><img src="images/projects/mozaik/moz3.png" alt="mosaic" width="120"/></a> </li>
+						<li><a href="images/projects/mozaik/moz5.png" data-lightbox="mosaic" title="Viktning av hur viktiga de olika färgvärdena är vid jämförelse tillsammans med storleken på mozaikcellerna är de påverkande faktorer som varieras mellan resultaten."><img src="images/projects/mozaik/moz5.png" alt="mosaic" width="120"/></a> </li>
+						<li><a href="images/projects/mozaik/moz6.png" data-lightbox="mosaic" title="Denna bild visar hur resultatet skiljer genom att ändra på dessa parametrar. Det högra resultatet ansågs som ett ok resultat då en balans har hittats mellan kvalite och snabbhet av applikationen."><img src="images/projects/mozaik/moz6.png" alt="mosaic" width="120"/></a> </li>
+					</ul>
+				</div>
+				<!-- END MosaicFreak -->
+
+				<!-- SKURK -->
+				<li><a class="projectlink Skurk">
+				<br/> <br/>	
+					<h5>Skurk</h5><img src="images/projects/Skurk/skurk_3.png" alt="Sumoke" width="180" height="135"/> 
+					</a> <br>
+					<p> Informationsvisualisering av brottslighetsdata i Sverige år 2013</p> 
+				</li>
+
+				<div id="Skurk" class ="projectbox">	
+					
+					 <p> <strong>Språk:</strong> HTML,CSS,Javascript,Bootstrap,D3 <br/>
+					 	<strong> Kurs:</strong>  Informationsvisualisering TNM042 <br/>
+					 	<strong>Medarbetare:</strong> Oscar Ivarsson, John Hollén 
+					 	<br/>
+					 	<br/>
+					 	<a href='projects/Skurk' style="color:blue; text-decoration:underline;"> Prova applikationen här </a> <br/>
+
+						<strong>Bilder:</strong> 
+					 </p> 
+					<ul>
+						<li><a href="images/projects/Skurk/skurk_1.png" data-lightbox="Skurk" title="Startvyn, visar en Stream graph,Parallel plot samt en karta över Sverige."><img src="images/projects//Skurk/skurk_1.png" alt="Skurk" width="120"/> </a> </li>
+						<li><a href="images/projects//Skurk/skurk_2.png" data-lightbox="Skurk" title="Varje lager i Stream Graph visar en brottskategori."><img src="images/projects/Skurk/skurk_2.png" alt="Skurk" width="120"/></a> </li> 
+						<li><a href="images/projects//Skurk/skurk_3.png" data-lightbox="Skurk" title="Lätt att välja en kommun för att analysera."><img src="images/projects/Skurk/skurk_3.png" alt="Skurk" width="120"/></a> </li>
+						<li><a href="images/projects/Skurk/skurk_4.png" data-lightbox="Skurk" title="Data mining är utfört med hjälp av klustreringsalgoritmer."><img src="images/projects/Skurk/skurk_4.png" alt="Skurk" width="120"/></a> </li>
+						<li><a href="images/projects/Skurk/skurk_5.png" data-lightbox="Skurk" title="En annan clustreringsalgoritm som kollar valt antal kluster och delar in i kommuner profiler av brott."><img src="images/projects/Skurk/skurk_5.png" alt="Skurk" width="120"/></a> </li>
+					</ul>
+				</div>
+				<!-- END SKURK -->
+				<br/> <br/>
+
+
+			<h3> 2013 </h3>
+			<hr />
+			 	<!-- Citrus -->
+				<li><a class="projectlink Citrus">
+					<h5>Citrus</h5><img src="images/projects/Citrus/c4.jpg" alt="Citrus" width="180" height="135"/> 
+					</a> <br>
+					<p> Ett webb interface baserat på HTML för set top boxes producerade av företag Zenterio</p> 
+				</li>
+				<div id="Citrus" class ="projectbox">	
+					<br/>
+					<p> Webb interfacet blev utvecklat för att köras i webbläsaren Ekioh. Projektet fokuserade på programutvecklingsmetodik i grupper av 30 personer. Olika avdelningar inom utvecklingen blev tillsatta och min roll blev testledare till en grupp av 6 personer som var ansvariga för testning. Testning som utfördes var enhetstesting, systemtestning samt användbarhetstestning. En schemalagd automatiskt enhetstest blev skapad med hjälp av Selenium</p>
+
+					 <p> <strong>Språk:</strong> Javascript,HTML,JUnit,Selenium,RequireJS,JQuery,Selenium<br/>
+					 	<strong> Kurs:</strong> Programutvecklingsmetodik TDDC88<br/>
+					 	<br/>
+					 	<br/>
+
+						<strong>Bilder:</strong> 
+					 </p> 
+					
+					<ul>
+						<li><a href="images/projects/Citrus/c1.jpg" data-lightbox="Citrus" title="Programinformation som visas då kanal byts eller om man trycker på info knapp"><img src="images/projects/Citrus/c1.jpg" alt="Citrus" width="120"/> </a> </li>
+						<li><a href="images/projects/Citrus/c2.jpg" data-lightbox="Citrus" title="EPG som visar en sammanställning av de program som visas i ett antal olika kanaler."><img src="images/projects/Citrus/c2.jpg" alt="Citrus" width="120"/></a> </li> 
+						<li><a href="images/projects/Citrus/c3.jpg" data-lightbox="Citrus" title="Volymkontroll"><img src="images/projects/Citrus/c3.jpg" alt="Citrus" width="120"/> </a> </li>
+						<li><a href="images/projects/Citrus/c4.jpg" data-lightbox="Citrus" title="Hantering av inspelade videosekvenser. Möjlighet fanns även att schemalägga inspelning"><img src="images/projects/Citrus/c4.jpg" alt="Citrus" width="120"/></a> </li> 
+						<li><a href="images/projects/Citrus/c5.jpg" data-lightbox="Citrus" title="Inställningar för användaren"><img src="images/projects/Citrus/c5.jpg" alt="Citrus" width="120"/> </a> </li>
+						<li><a href="images/projects/Citrus/c6.jpg" data-lightbox="Citrus" title="Användarinställningar"><img src="images/projects/Citrus/c6.jpg" alt="Citrus" width="120"/></a> </li> 
+						<li><a href="images/projects/Citrus/c7.jpg" data-lightbox="Citrus" title="Huvudmenyn där man kan välja mellan inspelningar, EPG:n och inställningar."><img src="images/projects/Citrus/c7.jpg" alt="Citrus" width="120"/></a> </li> 
+					</ul>
+				</div>
+				<!-- END Citrus -->
+
+			<hr />
+			 	<!-- Sumoke -->
+				<li><a class="projectlink Sumoke">
+					<h5>Sumoke</h5><img src="images/projects/Sumoke/sumoke_1.png" alt="Sumoke" width="180" height="135"/> 
+					</a> <br>
+					<p> En realtidsrenderad röksimulering med volymrendering skapad i GLSL.</p> 
+				</li>
+				<div id="Sumoke" class ="projectbox">	
+					
+					 <p> <strong>Språk:</strong> C++,OpenGL,OpenCL,GLSL,MATLAB <br/>
+					 	<strong> Kurs:</strong>  Modelleringsprojekt TNM085 <br/>
+					 	<strong>Medarbetare:</strong> Jimmie Berg,Oscar Ivarsson, Pär Eriksson, Robin Berntsson 
+					 	<br/>
+					 	<br/>
+					 	<strong>Video:</strong> <br/> 
+						<a href="http://www.youtube.com/watch?v=NHDkpWNJS-g" style="color:blue; text-decoration:underline;">Sumoke i tidigt stadie, MATLAB-version </a> <br/>
+						<a href="http://www.youtube.com/watch?v=tPCFTdZpS-0" style="color:blue; text-decoration:underline;">Sumoke färdig, redovisningsfilm.</a>  <br/>
+
+						<strong>Bilder:</strong> 
+					 </p> 
+					
+					<ul>
+						<li><a href="images/projects/Sumoke/sumoke_1.png" data-lightbox="Sumoke" title="Rök simulering som realtidsrenderas."><img src="images/projects/Sumoke/sumoke_1.png" alt="Sumoke" width="120"/> </a> </li>
+						<li><a href="images/projects/Sumoke/sumoke_2.png" data-lightbox="Sumoke" title="Tre variabler går att ändra på interaktivt för att karaktärisera röken."><img src="images/projects/Sumoke/sumoke_2.png" alt="Sumoke" width="120"/></a> </li> 
+						<li><a href="images/projects/Sumoke/sumoke_3.png" data-lightbox="Sumoke" title="Densitet,viskösitet och diffusion."><img src="images/projects/Sumoke/sumoke_3.png" alt="Sumoke" width="120"/></a> </li>
+						<li><a href="images/projects/Sumoke/sumoke_4.png" data-lightbox="Sumoke" title="Sumoke röksimulator."><img src="images/projects/Sumoke/sumoke_4.png" alt="Sumoke" width="120"/></a> </li>
+						<li><a href="images/projects/Sumoke/sumoke_5.png" data-lightbox="Sumoke" title="Skapad med hjälp av voxelbaserat grid"><img src="images/projects/Sumoke/sumoke_5.png" alt="Sumoke" width="120"/></a> </li>
+						<li><a href="images/projects/Sumoke/sumoke_6.png" data-lightbox="Sumoke" title="Sumoke"><img src="images/projects/Sumoke/sumoke_6.png" alt="Sumoke" width="120"/></a> </li>
+						<li><a href="images/projects/Sumoke/sumoke_7.png" data-lightbox="Sumoke" title="Sumoke"><img src="images/projects/Sumoke/sumoke_7.png" alt="Sumoke" width="120"/></a> </li>
+					</ul>
+				</div>
+				<!-- END Sumoke -->
+				<li>
+				<br/><br/>
+				<!-- Tetris Master -->		
+				<a class="projectlink Tetris Master">
+					<h5>Tetris Master</h5><img src="images/projects/AI/AI_1.png" alt="Sumoke" width="180" height="135"/> 
+					</a> <br>
+					<p> Projekt i artificiell intelligens där en tetrisspelare skapades och optimerades med hjälp av genetiska algoritmer.</p> 
+				</li>
+				<div id="Tetris Master" class ="projectbox">	
+					
+					 <p> <strong>Språk:</strong> Java Swing<br/>
+					 	<strong> Kurs:</strong> TNM066 Datamodeller för kognitiva processer <br/>
+
+					 	<strong>Medarbetare:</strong> Robin Berntsson 
+					 	<br/>
+					 	<br/>
+					 	<strong>Video:</strong> <br/> 
+						<a href="https://www.youtube.com/watch?v=_DeNV3DJctw" style="color:blue; text-decoration:underline;">Kort screencast av programmet</a> <br/>
+						<strong> Rapport </strong> <br/>
+						<a href="reports/Tetrismaster/reportTNM066.pdf" style="color:blue; text-decoration:underline;">Projektrapport</a>  <br/>
+
+						<strong>Bilder:</strong> 
+					 </p> 
+					
+					<ul>
+						<li><a href="images/projects/AI/AI_1.png" data-lightbox="AI" title="Spelet Tetris skapat från grunden i Java Swing"><img src="images/projects/AI/AI_1.png" alt="Sumoke" width="120"/> </a> </li>
+						<li><a href="images/projects/AI/AI_2.png" data-lightbox="AI" title="Spelet styrs med en AI spelare som styr med hjälp av 7 stycken regler/faktorer som avgör hur den ska lägga blocken."><img src="images/projects/AI/AI_2.png" alt="Sumoke" width="120"/></a> </li> 
+						<li><a href="images/projects/AI/AI_3.png" data-lightbox="AI" title="Dessa variabler optimeras med hjälp av en genetisk algoritm som lär sig att spela bättre och bättre ju längre den spelar."><img src="images/projects/AI/AI_3.png" alt="AI" height="168" width="120"/></a> </li>
+						<li><a href="images/projects/AI/AI_4.png" data-lightbox="AI" title=""><img src="images/projects/AI/AI_4.png" alt="AI" width="120"/></a> </li>
+						<li><a href="images/projects/AI/AI_5.png" data-lightbox="AI" title="Ibland testas dåliga värden på faktorerna och då spelar AI:n ologiskt och får dåliga poäng."><img src="images/projects/AI/AI_5.png" alt="AI" width="120"/></a> </li>
+						<li><a href="images/projects/AI/AI_6.png" data-lightbox="AI" title="Den genetiska algoritmen uppbyggnad och hur den itereras"><img src="images/projects/AI/AI_6.png" alt="AI" height="168" width="120"/></a> </li>
+						<li><a href="images/projects/AI/AI_7.png" data-lightbox="AI" title="En graf som visar att medelpoängen för AI spelaren ökar ju mer den spelar."><img src="images/projects/AI/AI_7.png" alt="AI" height="168" width="120"/></a> </li>
+					</ul>
+				</div>
+				<!-- END Tetris Master -->
+
+				<!-- Bloggen -->
+					<li>
+						<br/> <br/>
+						<a class="projectlink Bloggen">
+						<h5>Bloggen</h5><img src="images/projects/Bloggen/Bloggen_7.png" alt="Bloggen" width="180" height="135"/>
+						</a>  <br>
+						<p> XML-baserad bloggportal som kan anpassas för två olika utenheter (mobil och dator) samt kan vidare publiceras via RSS. </p>
+						<br>
+					</li> 
+				<div id="Bloggen" class ="projectbox">	
+
+					<p> <strong>Språk:</strong> XML,DTD,RSS,XSLT,CSS,HTML,PHP, MySQL,XPath,Twitters API <br/>
+					 	<strong> Kurs:</strong> Dokumentstrukturer TNM065   <br/>
+					 	<strong>Medarbetare:</strong> Max Hjärtström
+					 	<br/> <br/>
+
+					 	<strong>Bilder:</strong> 
+
+					 </p> 
+					<br/> 
+					<ul>
+						<li><a href="images/projects/Bloggen/Bloggen_1.png" data-lightbox="Bloggen" title="Sidan för att administrera inlägg, skapa nytt inlägg och redigera samt radera befinliga inlägg."><img src="images/projects/Bloggen/Bloggen_1.png" alt="Bloggen" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/Bloggen/Bloggen_2.png" data-lightbox="Bloggen" title="Mobilversionen av startsidan."><img src="images/projects/Bloggen/Bloggen_2.png" alt="Bloggen" width="120" height="120"/></a> </li> 
+						<li><a href="images/projects/Bloggen/Bloggen_3.png" data-lightbox="Bloggen" title="Meddelandet som visas då ett inlägg postats på bloggen samt delar av de på twitter."><img src="images/projects/Bloggen/Bloggen_3.png" alt="Bloggen" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Bloggen/Bloggen_4.png" data-lightbox="Bloggen" title="För att redigera inlägg så finns en sökfunktion för att hitta de inlägg som finns på bloggen för att sedan kunna redigera/radera dem."><img src="images/projects/Bloggen/Bloggen_4.png" alt="Bloggen" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Bloggen/Bloggen_5.png" data-lightbox="Bloggen" title="RSS-version av hemsidan går att följas, här m.h.a en extern RSS-läsare"><img src="images/projects/Bloggen/Bloggen_5.png" alt="Bloggen" width="120" height="120"/></a> </li>	
+						<li><a href="images/projects/Bloggen/Bloggen_6.png" data-lightbox="Bloggen" title="RSS-versionen i webbläsaren"><img src="images/projects/Bloggen/Bloggen_6.png" alt="Bloggen" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Bloggen/Bloggen_7.png" data-lightbox="Bloggen" title="Startsida i datorversion. Möjlighet att nå både adminsidan samt RSS-versionen."><img src="images/projects/Bloggen/Bloggen_7.png" alt="Bloggen" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Bloggen/Bloggen_8.png" data-lightbox="Bloggen" title="Inlägg som vidarebefodrats till Twitter."><img src="images/projects/Bloggen/Bloggen_8.png" alt="Bloggen" width="120" height="120"/></a> </li>
+					</ul>
+				</div>
+				<!-- END Bloggen -->
+			
+				
+			<h3> 2012 </h3>
+			<hr />
+				<!-- Atril -->
+				<li><a class="projectlink Atril">
+				<br/>	
+				<h5>Atril</h5><img src="images/projects/Atril/atril_11.jpg" width="180" height="135"/> 
+				</a> <br/>
+				<p> Första större projektarbetet där en Grafikmotor skapades med en objektinladdare,skuggmappning och en kollisionsdetektor.  </p>
+				<br/> 
+
+				</li>
+
+				<div id="Atril" class ="projectbox">
+
+				
+					<p> <strong>Språk:</strong> C++,OpenGL,GLFW,GLSL, även en liten strimma med shaderprogrammering för skuggmappningen. 
+					<br/>
+					 	<strong> Kurs:</strong> TMN061 3-D Datorgrafik   <br/>
+					 	<strong>Medarbetare:</strong> Oscar Ivarsson, Pär Eriksson, Robin Berntsson och Jimmie Berg. 
+
+					 	<br/> <br/>
+
+					 	<strong>Video:</strong> <br/> 
+							<a href="http://www.youtube.com/watch?v=Yi8sk5WEcTQ" style="color:blue; text-decoration:underline;">Atril, redovisningsfilm </a> <br/>
+
+						<strong>Bilder:</strong> 
+						<br/>
+					 </p> 
+				
+					<ul>
+						<li><a href="images/projects/Atril/atril_1.jpg" data-lightbox="Atril" title="Objektinladdning utan någon textur.."><img src="images/projects/Atril/atril_1.jpg" alt="Atril" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/Atril/atril_2.jpg" data-lightbox="Atril" title="Objektinladdning."><img src="images/projects/Atril/atril_2.jpg" alt="Atril" width="120" height="120"/></a> </li> 
+						<li><a href="images/projects/Atril/atril_3.jpg" data-lightbox="Atril" title="Några sfärer inladdade för att testa kollektionshanteringen."><img src="images/projects/Atril/atril_3.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_4.jpg" data-lightbox="Atril" title="Belysning utan texturer."><img src="images/projects/Atril/atril_4.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_5.jpg" data-lightbox="Atril" title="Belysning utan texturer."><img src="images/projects/Atril/atril_5.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_6.jpg" data-lightbox="Atril" title="Belysning utan texturer."><img src="images/projects/Atril/atril_6.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_7.jpg" data-lightbox="Atril" title="Belysning med texturer."><img src="images/projects/Atril/atril_7.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_8.jpg" data-lightbox="Atril" title="Belysning med texturer."><img src="images/projects/Atril/atril_8.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_9.jpg" data-lightbox="Atril" title="Belysning med texturer."><img src="images/projects/Atril/atril_9.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_10.jpg" data-lightbox="Atril" title=""><img src="images/projects/Atril/atril_10.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_11.jpg" data-lightbox="Atril" title="Skuggmappning."><img src="images/projects/Atril/atril_11.jpg" alt="Atril" width="120" height="120"/></a> </li>
+						<li><a href="images/projects/Atril/atril_12.jpg" data-lightbox="Atril" title="Skuggmappning."><img src="images/projects/Atril/atril_12.jpg" alt="Atril" width="120" height="120"/></a> </li>
+					</ul>
+				</div>
+				<!-- Atril -->
+
+				<br/>
+
+				<!-- FiskIdag -->
+				<li><a class="projectlink FiskIdag">
+
+					<h5>FiskIdag</h5><img src="images/projects/FiskIdag/FiskIdag_5.png" alt="FiskIdag" width="180" height="135"/> 
+					</a>  <br>
+					<p>Ett fiktivt uppdrag från företaget FiskIdag där deras sortiment styrdes upp i en databas. En enkel hemsida skapades för test och demonstration av arbetet.</p>
+
+				</li> 
+
+				<div id="FiskIdag" class ="projectbox">	
+					 <p> <strong>Språk:</strong> HTML,CSS,PHP och MySQL <br/>
+					 	<strong>Medarbetare:</strong> John Hollén <br/>
+					 	<strong>Kurs:</strong> TNM055 Databaser 
+
+						<br/> <br/>
+
+						<strong>Bilder:</strong> 
+						<br/> 	
+					 </p> 
+					
+					<ul>
+						<li><a href="images/projects/FiskIdag/FiskIdag_1.png" data-lightbox="FiskIdag" title="Startsida, inloggningsmöjlight för att administrera databasen och deras soirtiment."><img src="images/projects/FiskIdag/FiskIdag_1.png" alt="FiskIdag" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/FiskIdag/FiskIdag_2.png" data-lightbox="FiskIdag" title="Logga in."><img src="images/projects/FiskIdag/FiskIdag_2.png" alt="FiskIdag" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/FiskIdag/FiskIdag_3.png" data-lightbox="FiskIdag" title="Meny för att uppdatera lagerstatus och/eller lägga till nya varor och även hantera lite hur olika varor är relaterade till varandra i sortimentet."><img src="images/projects/FiskIdag/FiskIdag_3.png" alt="FiskIdag" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/FiskIdag/FiskIdag_4.png" data-lightbox="FiskIdag" title="Resultat då man söker på Art.nr för att uppdatera lagerstatus för en viss vara."><img src="images/projects/FiskIdag/FiskIdag_4.png" alt="FiskIdag" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/FiskIdag/FiskIdag_6.png" data-lightbox="FiskIdag" title="Visar vilka menyer som visas då en ny vara ska läggas till."><img src="images/projects/FiskIdag/FiskIdag_6.png" alt="FiskIdag" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/FiskIdag/FiskIdag_5.png" data-lightbox="FiskIdag" title="Flik för kunder att kunna söka i FiskIdags sortiment med olika former av sökningar."><img src="images/projects/FiskIdag/FiskIdag_5.png" alt="FiskIdag" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/FiskIdag/FiskIdag_7.png" data-lightbox="FiskIdag" title="ER-model av databasen gjord i Paint."><img src="images/projects/FiskIdag/FiskIdag_7.png" alt="FiskIdag" width="120" height="120"/> </a> </li>
+					</ul>
+				</div>
+				<!-- END FiskIdag -->
+
+			<h3> 2011 </h3>
+			<hr />
+				<!-- TP -->
+				<li>
+					<br/>
+					<a class="projectlink TrivialPursuit">
+					<h5>Trivial Pursuit</h5><img src="images/projects/TP/tp_4.png" alt="TP" width="180" height="135"/> 
+					</a>  <br>
+					<p>Projekt med fokus på gränssnitt. I detta projekt skapades en datorversion av brädspelet Trivial Pursuit. </p>
+					<br>
+				</li> 
+
+				<div id="Trivial Pursuit" class ="projectbox">	
+
+
+					 <p> <strong>Språk:</strong> Java med Swing <br/>
+					 <strong>Kurs:</strong> TMN040 Kommunikation och användargränssnitt <br/>
+					 <strong>Medarbetare:</strong> Oscar Ivarsson 
+					 <br/> <br/>
+
+						<strong>Bilder:</strong> 
+
+					 </p> 
+					<br/> 
+					<ul>
+						<li><a href="images/projects/TP/tp_1.png" data-lightbox="TP" title="Startmeny, val av antal spelare."><img src="images/projects/TP/tp_1.png" alt="TP" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/TP/tp_3.png" data-lightbox="TP" title="En spelares tur att kasta tärningen. Finn även meny för hjälp eller avsluta spelet."><img src="images/projects/TP/tp_3.png" alt="TP" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/TP/tp_2.png" data-lightbox="TP" title="Hjälpskärmen som visar hur spelet går till och vad de olika färgerna motsvarar för kategorier."><img src="images/projects/TP/tp_2.png" alt="TP" width="120" height="120"/> </a> </li>
+						
+						<li><a href="images/projects/TP/tp_4.png" data-lightbox="TP" title="Visar de alternativ en spelare har att röra sig efter hen har kastat tärningen genom att lysa upp dessa rutor."><img src="images/projects/TP/tp_4.png" alt="TP" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/TP/tp_5.png" data-lightbox="TP" title="En spelare har hamnat på en blå ruta och får en sportfråga."><img src="images/projects/TP/tp_5.png" alt="TP" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/TP/tp_6.png" data-lightbox="TP" title="En spelare har lyckats svara på en fråga i varje kategori och har därmed vunnit."><img src="images/projects/TP/tp_6.png" alt="TP" width="120" height="120"/> </a> </li>
+					</ul>
+				</div>
+				<!-- END TP -->
+			
+			<h3> 2010 </h3>
+			<hr />	
+
+				<!-- Scrotum -->
+				<li>
+					<br/>
+					<a class="projectlink Scrotum">
+					<h5>Scrotum</h5><img src="images/projects/Scrotum/scrotum_3.png" alt="Scrotum" width="180" height="135"/> 
+					</a>  <br>
+					<p> Första kursen inom webbprogrammering. Ett online-forum skapades i projektarbetet.</p>
+					<br/>
+				</li> 
+
+				<div id="Scrotum" class ="projectbox">	
+					
+					 <p> <strong>Språk:</strong> HTML,CSS,PHP,Javascript,MySQL <br/>
+					 <strong> Kurs: </strong> TNMK30 Elektronisk Publicering <br/>
+					 <strong>Medarbetare:</strong> Oscar Ivarsson 
+ 	   				 <br/> <br/>
+
+					 <strong>Bilder:</strong> 
+
+					 </p> 
+					<br/> 
+					<ul>
+						<li><a href="images/projects/Scrotum/scrotum_1.png" data-lightbox="Scrotum" title="Startsidan, inlogg för användare."><img src="images/projects/Scrotum/scrotum_1.png" alt="Scrotum" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/Scrotum/scrotum_2.png" data-lightbox="Scrotum" title="Felmeddelande om användare redan finns i databasen."><img src="images/projects/Scrotum/scrotum_2.png" alt="Scrotum" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/Scrotum/scrotum_3.png" data-lightbox="Scrotum" title="Huvudmeny, möjlighet att skapa ny tråd eller gå in och kommentera i befintliga trådar."><img src="images/projects/Scrotum/scrotum_3.png" alt="Scrotum" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/Scrotum/scrotum_4.png" data-lightbox="Scrotum" title="Inne i en diskussionstråd."><img src="images/projects/Scrotum/scrotum_4.png" alt="Scrotum" alt="Scrotum" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/Scrotum/scrotum_5.png" data-lightbox="Scrotum" title="Vyn för att skapa ett inlägg i en tråd."><img src="images/projects/Scrotum/scrotum_5.png" alt="Scrotum" width="120" height="120"/> </a> </li>
+						<li><a href="images/projects/Scrotum/scrotum_6.png" data-lightbox="Scrotum" title="Ett inlägg med innehållande bild samt text."><img src="images/projects/Scrotum/scrotum_6.png" alt="Scrotum" width="120" height="120"/> </a> </li>
+
+					</ul>			
+				</div>
+				<!-- END Scrotum -->
+			</ul>
+		</div>
+	</div>		
+		<div id="footer"> 
+			<ul>	
+				<li><a href="http://www.facebook.com/simbe109"><img src="images/icons/fbicon.jpg" alt="Smiley face" height="42" width="42"></a> </li>
+				<li><a href="http://www.twitter.com/simbe109"><img src="images/icons/twicon.png" alt="Smiley face" height="42" width="42"></a> </li>
+				<li><a href="http://www.linkedin.com/profile/view?id=191431903&trk=nav_responsive_tab_profile"><img src="images/icons/lkicon.png" alt="Smiley face" height="42" width="42"></a> </li>
+			</ul>
+		</div>
+
+	</div><!-- container -->
+
+<!-- End Document
+================================================== -->
+</body>
+</html>

@@ -1,0 +1,64 @@
+#streamGraph
+{
+	width:100%;
+	height:100%;
+}
+
+#streamGraph .axis line, #streamGraph .axis path 
+{
+    fill: none;
+    stroke: #000000;
+    shape-rendering: geometricPrecision;
+}
+
+#streamGraph #searchResults
+{
+	background-color: white;
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	z-index: 100;
+	position: absolute;
+	margin-left: 63px;
+	display: none;
+	overflow:scroll;
+	width: 153px;
+	max-height: 270px;
+	float: left;
+	
+}
+
+#streamGraph .kommundiv
+{	
+	width: 178px;
+	cursor: pointer;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 7px;
+	margin-left: 0px;
+}
+
+#streamGraph .kommundiv .kommun
+{
+	color: #666;
+	text-decoration: none;
+	padding-right: 70px;
+}
+
+#streamGraph .kommundiv:hover
+{
+	background-color: #eee;
+}
+
+.form-inline {
+	width: 500px;
+	padding-top: 5px;
+	padding-left: 30px;
+}
+
+#errorMessage {
+	display: inline-block;
+	color: #B74934;
+	font-weight: bold;
+	font-size: 14px;
+	padding-left: 5px;
+}

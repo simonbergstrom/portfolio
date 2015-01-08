@@ -1,0 +1,399 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+
+.container
+{
+	min-height: 700px;
+
+}
+.video
+{
+	color:blue;
+}
+
+#navigation 
+{
+	display: inline-block;
+	float: right;
+}
+#box
+{
+	position:absolute;
+	z-index: 50;
+	visibility: hidden;
+	width: 150px;
+	height: 205px;
+	border: 1px solid;
+	border-color: gainsboro;
+	margin-top: 1%;
+	margin-right: -40px;
+	right: 2.5pc;
+	background-color: white;
+	
+}
+.selected
+{
+	font-weight: bold;
+}
+
+#box ul
+{
+	text-align: center;
+	margin-top: -1px;
+}
+#box li
+{
+	padding-top:10px;
+	border-top: 1px solid;
+	border-color: gainsboro;
+	margin-bottom: 0px; /* Reset default */
+	padding-bottom: 12px;
+	width:150px;
+}
+#box li:active
+{
+	background-color: gainsboro;
+
+}
+
+#box a 
+{
+	text-decoration: none;
+}
+
+#navigation li
+{
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#navigation a 
+{
+	padding: 20px;
+	text-decoration: none;
+}
+
+#mobile-menu
+{
+	float: right;
+	margin-top: -30px;
+	width:40px;
+	height:40px;
+	visibility:hidden;
+	display:block;
+}
+.burger 
+{
+	width: 40px;
+	height:40px;
+	text-align: center;
+	background: url(../images/icons/mobilebtn.png);
+	background-size: 40px 40px;
+	margin:0px;
+}
+.burger:hover
+{
+	background: url(../images/icons/mobilebtn.png);
+	background-size: 40px 40px;
+
+}
+
+#footer {
+height: 50px;
+background-color: gainsboro;
+position: absolute;
+bottom: 0;
+width: 99%;
+
+}
+#footer ul {
+margin: 0 auto;
+width: inherit;
+height: 100%;
+text-align: center;
+}
+
+
+#footer li {
+display: inline-block;
+padding-right: 10px;
+padding-top: 5px;
+margin: 0 auto;
+}
+
+.msg {
+font-size: 12pt;
+position: absolute;
+left: 0;
+padding-left: 10px;
+padding-top: 10px;
+}
+
+/*Pic in info about me */
+#contactpic {
+	border-radius: 30px;
+}
+/* Contactinfo in Contact */
+#contactinfo {
+	padding-bottom: 40px;
+	left:40px;
+}
+#contactinfo ul
+{
+	float:right;
+	padding-right: 160px;
+}
+
+/* Projects in portfolio */
+#projects a, img 
+{
+	border-radius: 7px;
+	text-decoration: none;
+}
+#projects p 
+{
+	float:left;
+	display: inline-block;
+}
+
+.projectbox
+{
+	width: 100%;
+	height: 300px;
+	margin-top: 20px;
+}
+.projectbox li, ul
+{
+	display:inline-block;
+}
+.projectbox ul
+{
+	float:left;
+	margin:0px;
+}
+#videolink p
+{
+	margin-right: 200px;
+}
+
+a.projectlink
+{
+	cursor:pointer;
+}
+a.reportlink 
+{
+	float:right;
+	margin-left: 60px;
+
+}
+
+/* För ridån för projekten.... future work
+a.projectlink span
+{
+	display:block;
+	position:absolute;
+	margin-top: 23px;
+	padding-top: 60px;
+	height:0px;
+	width:180px;
+	background-color: black;
+	opacity: 0;
+	text-align: center;
+	transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+
+	text-decoration: none;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	border-radius: 10px;
+
+}
+a.projectlink:hover span
+{
+	height: 78px;
+	opacity: 0.6;
+	z-index: 99;
+}*/
+
+
+
+/* #Page Styles
+================================================== */
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {
+
+		#box 
+		{
+			display:inline-block;
+			visibility: visible;
+		}		
+
+		#navigation ul
+		{
+			display: none;
+		}
+
+		#navigation a
+		{
+			display: block;
+			margin-bottom:0px;
+		}
+
+
+
+		#mobile-menu 
+		{
+			display:inline-block;
+			visibility: visible;
+		}
+		#mobile-menu a:active
+		{
+			background-color: gainsboro;
+			border-radius: 40px 40px 0 0;	
+		}
+
+		#contactinfo ul
+		{
+			padding-right: 115px;
+			float: left;
+		}
+		.projectbox
+		{
+			height:380px;
+		}
+	}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+		#box 
+		{
+			right:3.2pc;
+		}	
+
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+		nav ul
+		{
+			/*display: none;*/
+		}
+
+
+		#box 
+		{
+			display:inline-block;
+			visibility: visible;
+
+		}		
+
+		#mobile-menu 
+		{
+			display:inline-block;
+			visibility: visible;
+		}
+
+		nav ul, nav:active ul {
+		display: none;
+		position: absolute;
+		padding: 20px;
+		background: #fff;
+		border: 5px solid #444;
+		right: 20px;
+		top: 60px;
+		width: 50%;
+		border-radius: 4px 0 4px 4px;
+
+		}
+		nav li 
+		{
+
+		text-align: center;
+		width: 100%;
+		padding: 10px 0;
+		margin: 0;
+
+		}
+
+		nav:hover ul 
+		{
+
+			display: block;
+
+		}
+		#contactinfo ul
+		{
+			padding-right: 280px;
+			padding-bottom: 40px;
+		}
+		.projectbox
+		{
+			height:400px;
+		}
+
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {
+
+
+		#contactinfo ul
+		{
+			padding-right: 160px;
+		}
+		.projectbox
+		{
+			height:545px;
+		}
+
+	}
+
+
+/* #Font-Face
+================================================== */
+/* 	This is the proper syntax for an @font-face file
+		Just create a "fonts" folder at the root,
+		copy your FontName into code below and remove
+		comment brackets */
+
+/*	@font-face {
+	    font-family: 'FontName';
+	    src: url('../fonts/FontName.eot');
+	    src: url('../fonts/FontName.eot?iefix') format('eot'),
+	         url('../fonts/FontName.woff') format('woff'),
+	         url('../fonts/FontName.ttf') format('truetype'),
+	         url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+	    font-weight: normal;
+	    font-style: normal; }
+*/

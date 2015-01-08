@@ -11,9 +11,6 @@
 	<title>Simon Bergström</title>
 	<meta name="description" content="portfolio">
 	<meta name="author" content="Simon Bergström">
-	<meta name="description" content="Free Web tutorials">
-	<meta name="keywords" content="Simon Bergström,simonbergstrom,simbe109,Bärsa">
-
 
 	<!-- Mobile Specific Metas
   ================================================== -->
@@ -21,9 +18,11 @@
 
 	<!-- CSS
   ================================================== -->
+
 	<link rel="stylesheet" href="stylesheets/base.css">
 	<link rel="stylesheet" href="stylesheets/skeleton.css">
 	<link rel="stylesheet" href="stylesheets/layout.css">
+
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -46,10 +45,9 @@
 	<!-- Primary Page Layout
 	================================================== -->
 	<!-- Delete everything in this .container and get started on your own site! -->
-	
+
 	<div class="container">
 	<header>
-
 		 <div class="sixteen columns">
 			<h1 class="remove-bottom" style="margin-top: 40px">Simon Bergström</h1>
 			<h5 style = "display: inline;">Min portfolio</h5>
@@ -58,17 +56,16 @@
 			<nav id="navigation">
 				
 				<ul>
-					<li class="selected"> <a href ="#">Hem </a> </li>
+					<li> <a href ="index.html">Hem </a> </li>
 					<li> <a href ="projects.html">Projekt </a> </li>
 					<li> <a href ="reports/CV/Simon_Bergstrom_CV.pdf">CV </a> </li>
 					<li> <a href='others.html'> Övrigt </a></li> 
-					<li> <a href ="contact.php">Kontakt </a> </li>
-
+					<li class="selected"> <a href ="#">Kontakt </a> </li>
 				</ul>
 			</nav>
 			<hr />
 
-
+			
 			<div id="mobile-menu">
 			<!-- MOBIL MENYN -->
 			<button class="burger"></button>
@@ -76,47 +73,105 @@
 			</div>
 			<div id='box'>
 				<ul>
-					<li class="selected"> <a href='#'> Hem </a></li> 
+					<li> <a href='index.html'> Hem </a></li> 
 					<li> <a href='projects.html'> Projekt </a></li> 
 					<li> <a href ="reports/CV/Simon_Bergstrom_CV.pdf">CV </a> </li>
 					<li> <a href='others.html'> Övrigt </a></li> 
-					<li> <a href='contact.php'> Kontakt </a></li> 
+					<li class="selected"> <a href='#'> Kontakt </a></li> 
 				</ul>
-			</div>
-
-			
+			</div>			
 		</div>
+	</header>
 
+	<div class="two-thirds column">
 
-
-		<div class="two-thirds column">
-			<h2> Välkommen! </h2>	
-
-			<p> Mitt namn är Simon, en skön grabb från Östergötland som för tillfället studerar till civilingenjör inom Medieteknik på Linköpings Universitet. Har intresse för programmering och har genom min utbildning utfört olika projekt inom bildbehandling,visualisering,datorgrafik samt diverse mindre programmeringsprojekt ni kan hitta under fliken Projekt.</p>
-			<p> Utanför studierna idrottar jag gärna i form av Bandy i Finspångs AIK eller lyfter skrot på gymmet.</p>
-
-
-			<img src="images/linkedin.jpg" alt="ContactImg" width="250" style="border-radius:20px"/> 
-		</div>
-
-		<!--<div class="one-third column">
-		<p>  </p>	
-
-		</div>-->
-
-
-
-		<div class="one-third column" style="margin-bottom:50px;">
-		<h3> Mitt Twitterflöde </h3>	
-	<a class="twitter-timeline" href="https://twitter.com/simbe109" data-widget-id="431541617766318080">Tweets by @simbe109</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-		</div>
-
+	<h3>Kontakt</h3>
 	
 
-	</header>
-		
+<?php
+// display form if user has not clicked submit
+
+	if (!isset($_POST["submitbtn"]))
+	  { 
+?>			
+		<form method="post">
+			  <!-- Label and text input -->
+			  <label>Namn:</label>
+			  <input type="text" name="name"/>
+
+			  <label>Din E-mail</label>
+			  <input type="email" name="email"/>
+			 
+			  <!-- Label and textarea -->
+			  <label>Meddelande:</label>
+			  <textarea name="txtArea"></textarea>
+			
+			  <input type="submit" name="submitbtn"/>
+	 
+		</form>
+
+		<?php 
+
+		  }
+
+		else
+		  // the user has submitted the form
+		  {
+
+		  	error_reporting(E_ALL);
+		  	require_once 'vendor/Swift/lib/swift_required.php';
+
+		// Create the Transport
+		$transport = Swift_SmtpTransport::newInstance('smtp.gmail.com',465,'ssl')
+		  ->setUsername('simbe109@gmail.com')
+		  ->setPassword('Simbe673.')
+		  ;
+
+		  // Check if the "from" input field is filled out
+		  if (isset($_POST["email"],$_POST["name"],$_POST["txtArea"]) )
+		    {
+
+		    	$mail = $_POST["email"]; $name = $_POST["name"]; $txt = $_POST["txtArea"];
+			    /*
+				You could alternatively use a different transport such as Sendmail or Mail:
+
+				// Sendmail */
+				$transport = Swift_SendmailTransport::newInstance('/usr/sbin/sendmail -t -i');
+
+				// Mail		
+				//$transport = Swift_MailTransport::newInstance(); 
+				
+				// Create the Mailer using your created Transport
+				$mailer = Swift_Mailer::newInstance($transport);
+
+				// Create a message
+				$message = Swift_Message::newInstance('Någon kontaktar dig från din hemsida!')
+				  ->setFrom(array($mail => $name))
+				  ->setTo(array('simbe109@student.liu.se' => 'Simon'))
+				  ->setBody($txt)
+				  ;
+
+				// Send the message
+				if (!$mailer->send($message, $failures)) {
+				  echo "<p class='msg'>Felmeddelande: </p>";
+				  print_r($failures);
+				} else {
+				    echo "<p class='msg'>Mail skickat!</p>";
+				}
+		    }	
+		  }
+		?>
+
+		</div>
+
+		<div class="one-third column">
+			<div id="contactinfo">
+				<h3> Annars kontakta mig på:</h3>
+					<ul> <li> simbe109@gmail.com </li>
+						 <li> 076-1422187 </li>
+					</ul>	 
+			</div>
+		</div>
 
 		<script type = "text/javascript">
 
@@ -127,10 +182,7 @@
 				container.hide();
 
 				$("button").click( function(){
-					//var container = $("#box");
-
 					container.toggle();
-
 				});
 			});
 

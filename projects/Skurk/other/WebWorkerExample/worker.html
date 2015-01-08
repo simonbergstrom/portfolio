@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<input type="button" onclick="bigLoop();" value="Big Loop" />
+		<input type="button" onclick="bigLoopWorker();" value="Big Loop Worker" />
+   		<input type="button" onclick="sayHello();" value="Say Hello" />
+
+		<script>
+
+			function bigLoop(){
+				for (var i = 0; i <= 1000000000; i += 1){
+					var j = i;
+				}
+				alert("Completed " + j + " iterations" );
+			}
+
+			function bigLoopWorker(){
+				var worker = new Worker('worker.js');
+
+				worker.onmessage = function (event) {
+					alert("Worker completed " + event.data + " iterations" );
+				};
+			}
+			
+			function sayHello(){
+				alert("Hello sir...." );
+			}
+
+		</script>
+
+	</body>
+</html>

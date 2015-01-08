@@ -1,0 +1,166 @@
+body{
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  background-image: url("img/bgnoise.png");
+  padding: 0px;
+  margin: 0px;
+}
+
+canvas{
+  height: 100%;
+  border-radius: 3px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+#canvasContainer{
+  float:left;
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 6px;
+  padding: 0px;
+}
+
+#topBarContent{
+  width: 1200px;
+  margin: 0 auto;
+}
+
+#container{
+  margin: 0 auto;
+  width: 1200px;
+}
+
+td{
+  padding-top: 20px;
+}
+
+table{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+#topBar{
+  background-color: #333;
+  color: white;
+  font-size: 10pt;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin-bottom: 35px;
+}
+
+a{
+  text-decoration:none;
+  color: #428bca;
+  display:inline-block;
+}
+
+#topBar a{
+  color:white;
+}
+
+#topBar a:hover{
+  color: #ddd;
+}
+
+h1{
+  display:inline-block;
+}
+
+.sideMenu{
+
+  width: 150px;
+  border: 1px solid #444;
+  border-radius: 3px;
+  background-color: #fff;
+  display: inline-block;
+  float:left;
+  height: 335px;
+}
+
+.sideMenuHeader{
+  margin: 0px;
+  padding: 5px;
+  background-color: #d9edf7;
+  border-radius: inherit;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-bottom: 1px solid #444;
+  color: #31708f;
+}
+
+.sideMenuHeader  h3{
+  margin: 3px;
+  padding: 0px;
+}
+
+.sideMenuBody{
+  text-align: center;
+  padding: 1px;
+}
+
+button{
+  border-radius: 3px;
+  background-color: white;
+  font-family: inherit;
+  font-size: 13pt;
+  width: 140px;
+  padding: 5px;
+  cursor: pointer;
+  color: white;
+  margin: 2px;
+}
+
+#resetbutton{
+  color: #444;
+  border: 1px solid #777;
+}
+
+#callButton{
+  background-color: #5bc0de;
+  border: 1px solid #39a0bd;
+}
+
+#betButton{
+  background-color: #d9534f;
+  border: 1px solid #ac2925;
+}
+
+#checkButton{
+  background-color: #449d44;
+  border: 1px solid #398439;
+}
+
+#raiseButton{
+  background-color: #ec971f;
+  border: 1px solid #d58512;
+}
+
+#foldButton{
+  background-color: #3071a9;
+  border: 1px solid #285e8e;
+}
+
+#startButton{
+  background-color: #449d44;
+  border: 1px solid #398439;
+}
+
+button:hover{
+  border-color: #000 !important;
+}
+
+.button-disabled{
+  background-color: #ccc !important;
+  color: #888 !important;
+  border-color: #aaa !important;
+  cursor: default !important;
+}
+
+.button-disabled:hover{
+  background-color: #ccc !important;
+  color: #888 !important;
+  border-color: #aaa !important;
+}
