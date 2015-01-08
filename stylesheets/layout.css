@@ -158,7 +158,6 @@ padding-top: 10px;
 #contactinfo ul
 {
 	float:right;
-	padding-right: 160px;
 }
 
 /* Projects in portfolio */
@@ -247,6 +246,11 @@ a.projectlink:hover span
 	/* Smaller than standard 960 (devices and browsers) */
 	@media only screen and (max-width: 959px) {
 
+		#contactinfo {
+		margin-left: 45%;
+		text-align: center;
+		}
+
 		#box 
 		{
 			display:inline-block;
@@ -279,7 +283,6 @@ a.projectlink:hover span
 
 		#contactinfo ul
 		{
-			padding-right: 115px;
 			float: left;
 		}
 		.projectbox
@@ -290,6 +293,12 @@ a.projectlink:hover span
 
 	/* Tablet Portrait size to standard 960 (devices and browsers) */
 	@media only screen and (min-width: 768px) and (max-width: 959px) {
+
+		#contactinfo {
+			margin-left: 45%;
+			text-align: center;
+		}
+
 
 		#box 
 		{
@@ -304,7 +313,9 @@ a.projectlink:hover span
 		{
 			/*display: none;*/
 		}
-
+		#contactinfo {
+			margin-left: 30%;
+		}
 
 		#box 
 		{
@@ -349,7 +360,6 @@ a.projectlink:hover span
 		}
 		#contactinfo ul
 		{
-			padding-right: 280px;
 			padding-bottom: 40px;
 		}
 		.projectbox
@@ -368,9 +378,9 @@ a.projectlink:hover span
 	@media only screen and (max-width: 479px) {
 
 
-		#contactinfo ul
+		#contactinfo 
 		{
-			padding-right: 160px;
+			margin-left: 30%;
 		}
 		.projectbox
 		{
