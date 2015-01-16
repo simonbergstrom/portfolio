@@ -152,12 +152,18 @@ padding-top: 10px;
 }
 /* Contactinfo in Contact */
 #contactinfo {
-	padding-bottom: 40px;
-	left:40px;
+	padding: 20px;
+	border: 1px solid;
+	border-color: lightgray;
+	border-radius: 1em;
+	margin-left: 45%;
+	text-align:center;
 }
+
 #contactinfo ul
 {
 	float:right;
+}
 }
 
 /* Projects in portfolio */
@@ -295,7 +301,7 @@ a.projectlink:hover span
 	@media only screen and (min-width: 768px) and (max-width: 959px) {
 
 		#contactinfo {
-			margin-left: 45%;
+			margin-left: 40%;
 			text-align: center;
 		}
 
@@ -358,10 +364,7 @@ a.projectlink:hover span
 			display: block;
 
 		}
-		#contactinfo ul
-		{
-			padding-bottom: 40px;
-		}
+	
 		.projectbox
 		{
 			height:400px;
@@ -380,7 +383,7 @@ a.projectlink:hover span
 
 		#contactinfo 
 		{
-			margin-left: 30%;
+			margin-left: 20%;
 		}
 		.projectbox
 		{
